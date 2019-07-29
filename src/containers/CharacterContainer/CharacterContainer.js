@@ -14,7 +14,11 @@ export const CharacterContainer = ({characters, filterStatus, filterClick}) => {
 
   const allCharacters = () => {
     return characters.map(character => {
-      return <Card character={character} key={character.id} />;
+      if (character.name.includes('(games)')) {
+        return null
+      } else {
+        return <Card character={character} key={character._id} />;
+      }
     });
   };
 
@@ -23,12 +27,14 @@ export const CharacterContainer = ({characters, filterStatus, filterClick}) => {
       const aff = character.affiliation
       if (aff === undefined) {
         return null
+      } else if (character.name.includes('(games)')) {
+        return null
       } else {
         return aff.includes('Water')
       }
     });
     return water.map(character => {
-      return <Card character={character} key={character.id} affiliation='water'/>;
+      return <Card character={character} key={character._id} affiliation='water'/>;
     });
   };
 
@@ -37,12 +43,14 @@ export const CharacterContainer = ({characters, filterStatus, filterClick}) => {
       const aff = character.affiliation
       if (aff === undefined) {
         return null
+      } else if (character.name.includes('(games)')) {
+        return null
       } else {
         return aff.includes('Fire')
       }
     });
     return fire.map(character => {
-      return <Card character={character} key={character.id} />;
+      return <Card character={character} key={character._id} />;
     });
   };
 
@@ -51,12 +59,14 @@ export const CharacterContainer = ({characters, filterStatus, filterClick}) => {
       const aff = character.affiliation
       if (aff === undefined) {
         return null
+      } else if (character.name.includes('(games)')) {
+        return null
       } else {
         return aff.includes('Earth')
       }
   });
     return earth.map(character => {
-      return <Card character={character} key={character.id} />;
+      return <Card character={character} key={character._id} />;
     });
   };
 
@@ -65,12 +75,14 @@ export const CharacterContainer = ({characters, filterStatus, filterClick}) => {
       const aff = character.affiliation
       if (aff === undefined) {
         return null
+      } else if (character.name.includes('(games)')) {
+        return null
       } else {
         return aff.includes('Air')
       }
     });
     return air.map(character => {
-      return <Card character={character} key={character.id} />;
+      return <Card character={character} key={character._id} />;
     });
   };
 
