@@ -12,35 +12,62 @@ import air from '../../images/air-symbol.png'
 export const CharacterContainer = ({characters, filterStatus, filterClick}) => {
 
   const allCharacters = () => {
-    console.log('characters')
     return characters.map(character => {
       return <Card character={character} key={character.id} />;
     });
   };
 
   const waterNation = () => {
-    let water = characters.filter(character => character.affiliation.includes('Water'));
+    let water = characters.filter(character => {
+      const aff = character.affiliation
+      if (aff === undefined) {
+        return null
+      } else {
+        return aff.includes('Water')
+      }
+    });
     return water.map(person => {
       return <Card character={person} key={person.id} affiliation='water'/>;
     });
   };
 
   const fireNation = () => {
-    let fire = characters.filter(character => character.affiliation.includes('Fire'));
+    let fire = characters.filter(character => {
+      const aff = character.affiliation
+      if (aff === undefined) {
+        return null
+      } else {
+        return aff.includes('Fire')
+      }
+    });
     return fire.map(person => {
       return <Card character={person} key={person.id} />;
     });
   };
 
   const earthNation = () => {
-    let earth = characters.filter(character => character.affiliation.includes('Earth'));
+    let earth = characters.filter(character => {
+      const aff = character.affiliation
+      if (aff === undefined) {
+        return null
+      } else {
+        return aff.includes('Earth')
+      }
+  });
     return earth.map(person => {
       return <Card character={person} key={person.id} />;
     });
   };
 
   const airNation = () => {
-    let air = characters.filter(character => character.affiliation.includes('Air'));
+    let air = characters.filter(character => {
+      const aff = character.affiliation
+      if (aff === undefined) {
+        return null
+      } else {
+        return aff.includes('Air')
+      }
+    });
     return air.map(person => {
       return <Card character={person} key={person.id} />;
     });
