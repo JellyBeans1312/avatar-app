@@ -33,5 +33,16 @@ describe('Api calls', () => {
       const result = await getAllCharacters();
       expect(result).toEqual(mockAllCharacters);
     });
+
+    it('should return an error if fails', () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: false
+        });
+      });
+      expect(getAllCharacters()).rejects.toEqual(
+        Error('There was a problem getting your characters')
+      );
+    });
   });
 });
