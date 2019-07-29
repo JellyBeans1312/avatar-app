@@ -28,11 +28,11 @@ async componentDidMount() {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   allCharacters: store.characters
 })
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   characters: characters => dispatch(showCharacters(characters))
 })
 

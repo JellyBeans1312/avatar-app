@@ -1,5 +1,5 @@
 import React from 'react';
-import { App } from './App';
+import { App, mapStateToProps, mapDispatchToProps } from './App';
 import { shallow } from 'enzyme'
 
 
@@ -33,8 +33,17 @@ describe('App', () => {
         ok: false
       });
     });
-
   });
-
-
-})
+  describe('mapStateToProps', () => {
+    it('should contain allCharacters', () => {
+      const mockState = {
+        characters: 'andre3000000000'
+      };
+      const expected = {
+        allCharacters: 'andre3000000000',
+      };
+      const mappedProps = mapStateToProps(mockState);
+      expect(mappedProps).toEqual(expected);
+    });
+  });
+});
