@@ -1,4 +1,4 @@
-import { getAllCharacters } from './apiCalls';
+import { getAllCharacters, getCharacter } from './apiCalls';
 
 describe('Api calls', () => {
   let url = 'https://last-airbender-api.herokuapp.com/api/v1/characters?perPage=100';
@@ -18,7 +18,7 @@ describe('Api calls', () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: true,
-        json: () => Promise.resolve(mockAllCharacters )
+        json: () => Promise.resolve(mockAllCharacters)
       });
     });
   });
@@ -44,5 +44,13 @@ describe('Api calls', () => {
         Error('There was a problem getting your characters')
       );
     });
+  });
+  describe('getCharacter', () => {
+    it('should be called with correct url', () => {
+      getCharacter(1);
+      expect(window.fetch).toHaveBeenCalledWith(`https://last-airbender-api.herokuapp.com/api/v1/characters/1`)
+    });
+
+    
   });
 });
