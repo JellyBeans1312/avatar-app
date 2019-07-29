@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import NavBar from '../components/NavBar'
+import CharacterContainer from '../components/CharacterContainer'
 
 class App extends Component {
   constructor(){
@@ -9,7 +11,7 @@ class App extends Component {
 
 
   componentDidMount() {
-    fetch('https://last-airbender-api.herokuapp.com/api/v1/characters/5cf5679a915ecad153ab68c9')
+    fetch('https://last-airbender-api.herokuapp.com/api/v1/characters')
     .then(res => res.json())
     .then(data => console.log(data))
   }
