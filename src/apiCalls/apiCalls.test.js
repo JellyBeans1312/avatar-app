@@ -18,7 +18,7 @@ describe('Api calls', () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ mockAllCharacters })
+        json: () => Promise.resolve(mockAllCharacters )
       });
     });
   });
@@ -27,6 +27,11 @@ describe('Api calls', () => {
     it('should be called with the correct url', () => {
       getAllCharacters();
       expect(window.fetch).toHaveBeenCalledWith(url);
+    });
+
+    it('should return the characters', async () => {
+      const result = await getAllCharacters();
+      expect(result).toEqual(mockAllCharacters);
     });
   });
 });
