@@ -5,7 +5,8 @@ import { Card } from '../Card/Card'
 import water from '../../images/water-symbol.png'
 import fire from '../../images/fire-symbol.png'
 import earth from '../../images/earth-symbol.png'
-import air from '../../images/air-symbol.png'
+import air from '../../images/air-symbol.png';
+import { Redirect } from 'react-router-dom';
 
 
 
@@ -26,8 +27,8 @@ export const CharacterContainer = ({characters, filterStatus, filterClick}) => {
         return aff.includes('Water')
       }
     });
-    return water.map(person => {
-      return <Card character={person} key={person.id} affiliation='water'/>;
+    return water.map(character => {
+      return <Card character={character} key={character.id} affiliation='water'/>;
     });
   };
 
@@ -40,8 +41,8 @@ export const CharacterContainer = ({characters, filterStatus, filterClick}) => {
         return aff.includes('Fire')
       }
     });
-    return fire.map(person => {
-      return <Card character={person} key={person.id} />;
+    return fire.map(character => {
+      return <Card character={character} key={character.id} />;
     });
   };
 
@@ -54,8 +55,8 @@ export const CharacterContainer = ({characters, filterStatus, filterClick}) => {
         return aff.includes('Earth')
       }
   });
-    return earth.map(person => {
-      return <Card character={person} key={person.id} />;
+    return earth.map(character => {
+      return <Card character={character} key={character.id} />;
     });
   };
 
@@ -68,8 +69,8 @@ export const CharacterContainer = ({characters, filterStatus, filterClick}) => {
         return aff.includes('Air')
       }
     });
-    return air.map(person => {
-      return <Card character={person} key={person.id} />;
+    return air.map(character => {
+      return <Card character={character} key={character.id} />;
     });
   };
 
@@ -89,9 +90,8 @@ export const CharacterContainer = ({characters, filterStatus, filterClick}) => {
           <button className=''id='all' onClick={e => handleClick(e)}>
             Show all
           </button>
-          <img src={water} alt='water symbol'className='' id='water' onClick={e => handleClick(e)}>
-            {/* water */}
-          </img>
+          <img src={water} alt='water symbol'className='' id='water' onClick={e => handleClick(e)}/>
+
           <img src={fire} alt='fire symbol'className='' id='fire' onClick={e => handleClick(e)}>
             {/* fire */}
           </img >
