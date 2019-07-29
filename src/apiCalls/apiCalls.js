@@ -1,4 +1,4 @@
-import { characters, avatars, char } from './endPoints'
+import { characters } from './endPoints'
 
 export const getAllCharacters = async () => {
   try {

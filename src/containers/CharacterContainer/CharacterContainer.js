@@ -12,7 +12,7 @@ import air from '../../images/air-symbol.png'
 export const CharacterContainer = ({characters, filterStatus, filterClick}) => {
 
   const allCharacters = () => {
-    console.log(characters)
+    console.log('characters')
     return characters.map(character => {
       return <Card character={character} key={character.id} />;
     });
@@ -62,43 +62,43 @@ export const CharacterContainer = ({characters, filterStatus, filterClick}) => {
           <button className=''id='all' onClick={e => handleClick(e)}>
             Show all
           </button>
-          <img src={water} className='' id='water' onClick={e => handleClick(e)}>
+          <img src={water} alt='water symbol'className='' id='water' onClick={e => handleClick(e)}>
             {/* water */}
           </img>
-          <img src={fire} className='' id='fire' onClick={e => handleClick(e)}>
+          <img src={fire} alt='fire symbol'className='' id='fire' onClick={e => handleClick(e)}>
             {/* fire */}
           </img >
-          <img src={earth} className='' id='earth' onClick={e => handleClick(e)}>
+          <img src={earth} alt='earth symbol'className='' id='earth' onClick={e => handleClick(e)}>
             {/* earth */}
           </img >
-          <img src={air} className='' id='air' onClick={e => handleClick(e)}>
+          <img src={air} alt='air symbol'className='' id='air' onClick={e => handleClick(e)}>
             {/* air */}
           </img >
         </div>
       </header>
 
       {filterStatus === 'all' && (
-        <section className='allCharacters'>{allCharacters()}</section>
+        <section className='all-characters'>{allCharacters()}</section>
       )}
       {filterStatus === 'water' && (
-        <section className='waterCharacters'>{waterNation()}</section>
+        <section className='water-characters'>{waterNation()}</section>
       )}
-      {filterStatus=== 'fire' && (
-        <section className='fireCharacters'>{fireNation()}</section>
+      {filterStatus === 'fire' && (
+        <section className='fire-characters'>{fireNation()}</section>
       )}
       {filterStatus === 'earth' && (
-        <section className='earthCharacters'>{earthNation()}</section>
+        <section className='earth-characters'>{earthNation()}</section>
       )}
       {filterStatus === 'air' && (
-        <section className='airCharacters'>{airNation()}</section>
+        <section className='air-characters'>{airNation()}</section>
       )}
     </>
   );
 };
 
-export const mapStateToProps = ({ characters, filterStatus }) => ({
-  characters,
-  filterStatus
+export const mapStateToProps = (store) => ({
+  characters: store.characters,
+  filterStatus: store.filter
 });
 
 export const mapDispatchToProps = dispatch => ({
