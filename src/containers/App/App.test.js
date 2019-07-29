@@ -28,9 +28,9 @@ describe('App', () => {
     expect(wrapper.instance().props.getAllCharacters).toHaveBeenCalled
   });
 
-  it('should call characters() ', () => {
-    expect(wrapper.instance().props.characters).toHaveBeenCalled
-  });
+  // it('should call characters() ', () => {
+  //   expect(wrapper.instance().props.characters).toHaveBeenCalled
+  // });
 
   it.skip('should throw an error if fetching failed (SAD)', () => {
     window.fetch = jest.fn().mockImplementation(() => {

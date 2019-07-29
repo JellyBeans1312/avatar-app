@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import { getCharacter } from '../../apiCalls/apiCalls'
 
 export const Card = ({ character }) => {
-  const handleClick = async () => {
-    const results = await getCharacter(character._id)
-    return results
-  }
+  // const handleClick = async () => {
+  //   const results = await getCharacter(character._id)
+  //   return results
+  // }
 
   return (
     <Link to={`/${character.name}`} key={character.id}>
-      <section onClick={handleClick}>
+      <section>
         <img
           src={character.photoUrl}
           alt={`a photo of ${character.name}`}

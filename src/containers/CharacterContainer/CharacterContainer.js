@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { filterCharacters } from '../../actions';
-import { Card } from '../Card/Card'
+import { Card } from '../../components/Card/Card'
 import water from '../../images/water-symbol.png'
 import fire from '../../images/fire-symbol.png'
 import earth from '../../images/earth-symbol.png'
