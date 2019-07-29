@@ -13,6 +13,7 @@ async componentDidMount() {
   try {
     const res = await getAllCharacters()
     this.props.characters(res)
+    console.log(this.props.characters(res))
   } catch (error) {
     throw Error(error.message)
   }
