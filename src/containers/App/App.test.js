@@ -1,6 +1,7 @@
 import React from 'react';
 import { App, mapStateToProps, mapDispatchToProps } from './App';
 import { shallow } from 'enzyme'
+import { showCharacters } from  '../../actions'
 
 
 describe('App', () => {
@@ -27,6 +28,10 @@ describe('App', () => {
     expect(wrapper.instance().props.getAllCharacters).toHaveBeenCalled
   });
 
+  it('should call characters() ', () => {
+    expect(wrapper.instance().props.characters).toHaveBeenCalled
+  });
+
   it.skip('should throw an error if fetching failed (SAD)', () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
@@ -44,6 +49,15 @@ describe('App', () => {
       };
       const mappedProps = mapStateToProps(mockState);
       expect(mappedProps).toEqual(expected);
+    });
+  });
+  describe('mapDispatchToProps', () => {
+    it('should call call showCharacters', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = showCharacters();
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.characters();
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     });
   });
 });
