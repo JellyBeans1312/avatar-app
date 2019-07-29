@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
-import { characters } from './characterReducers'
+import { characters, filterCharacters } from './characterReducers'
+
 export const rootReducer = combineReducers({
-    characters: characters
+    characters: characters,
+    filter: filterCharacters
 })

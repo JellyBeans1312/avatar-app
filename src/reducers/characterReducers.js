@@ -6,3 +6,12 @@ export const characters = (state = [], action) => {
       return state
   }
 }
+
+export const filterCharacters = (state ='all', action) => {
+  switch(action.type) {
+    case 'FILTER_CHARACTERS' :
+      return action.filterStatus
+    default : 
+      return state
+  }
+}

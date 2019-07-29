@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import CharacterContainer from '../components/CharacterContainer'
-import { getAllCharacters } from '../apiCalls/apiCalls'
+import CharacterContainer from '../CharacterContainer/CharacterContainer'
+import { getAllCharacters } from '../../apiCalls/apiCalls'
 import { connect } from 'react-redux'
-import { showCharacters } from '../actions'
+import { showCharacters } from '../../actions'
+import { Route } from 'react-router-dom'
 
 export class App extends Component {
 
@@ -20,10 +21,9 @@ async componentDidMount() {
 
   render() {
     return (
-    <div>
-
-      <CharacterContainer />
-    </div>
+    <main>
+      <Route exact path='/' component={CharacterContainer} />
+    </main>
     );
   }
 }
