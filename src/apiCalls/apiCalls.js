@@ -16,6 +16,6 @@ export const getCharacter = async (id) => {
     const parse = await res.json()
     return parse;
   } catch(error) {
-    throw Error(error.message)
+    throw Error('There was a problem getting your character')
   }
 }
