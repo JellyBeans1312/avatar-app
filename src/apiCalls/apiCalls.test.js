@@ -80,6 +80,6 @@ describe('Api calls', () => {
       expect(getCharacter(1)).rejects.toEqual(
         Error('There was a problem getting your character')
       )
-    })
+    });
   });
 });
