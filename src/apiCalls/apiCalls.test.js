@@ -1,7 +1,7 @@
 import { getAllCharacters, getCharacter } from './apiCalls';
 
 describe('Api calls', () => {
-  let url = 'https://last-airbender-api.herokuapp.com/api/v1/characters?perPage=100';
+  let url = 'https://last-airbender-api.herokuapp.com/api/v1/characters?perPage=50';
   let mockAllCharacters = [
     { id: 1, name: 'Aang', 
     affiliation: 'air', 
