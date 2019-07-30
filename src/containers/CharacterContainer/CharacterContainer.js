@@ -7,6 +7,7 @@ import fire from '../../images/fire-symbol.png'
 import earth from '../../images/earth-symbol.png'
 import air from '../../images/air-symbol.png';
 import { Redirect } from 'react-router-dom';
+import './CharacterContainer.css'
 
 
 
@@ -99,23 +100,22 @@ export const CharacterContainer = ({characters, filterStatus, filterClick}) => {
           Pick a Nation!!
         </h2>
         <div className='categories'>
-          <button className=''id='all' onClick={e => handleClick(e)}>
+          <p className='symbols all' id='all' onClick={e => handleClick(e)}>
             Show all
-          </button>
-          <img src={water} alt='water symbol'className='' id='water' onClick={e => handleClick(e)}/>
+          </p>
+          <img src={water} alt='water symbol'className='symbols' id='water' onClick={e => handleClick(e)}/>
 
-          <img src={fire} alt='fire symbol'className='' id='fire' onClick={e => handleClick(e)}>
-            {/* fire */}
-          </img >
-          <img src={earth} alt='earth symbol'className='' id='earth' onClick={e => handleClick(e)}>
-            {/* earth */}
-          </img >
-          <img src={air} alt='air symbol'className='' id='air' onClick={e => handleClick(e)}>
-            {/* air */}
-          </img >
+          <img src={fire} alt='fire symbol'className='symbols' id='fire' onClick={e => handleClick(e)}/>
+
+
+          <img src={earth} alt='earth symbol'className='symbols' id='earth' onClick={e => handleClick(e)}/>
+
+          <img src={air} alt='air symbol'className='symbols' id='air' onClick={e => handleClick(e)}/>
+
         </div>
       </header>
 
+      <div className='container'>
       {filterStatus === 'all' && (
         <section className='all-characters'>{allCharacters()}</section>
       )}
@@ -131,6 +131,7 @@ export const CharacterContainer = ({characters, filterStatus, filterClick}) => {
       {filterStatus === 'air' && (
         <section className='air-characters'>{airNation()}</section>
       )}
+      </div>
     </>
   );
 };

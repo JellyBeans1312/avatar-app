@@ -1,0 +1,22 @@
+.allCharacters {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.symbols {
+  margin: 0 50px;
+  height: 150px;
+}
+
+.title {
+  margin: auto;
+}
+
+.categories {
+  height: 30vh;
+  margin: 15px
+}
+
+.all {
+  display: inline-block;
+}
