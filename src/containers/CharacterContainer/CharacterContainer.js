@@ -6,7 +6,6 @@ import water from '../../images/water-symbol.png'
 import fire from '../../images/fire-symbol.png'
 import earth from '../../images/earth-symbol.png'
 import air from '../../images/air-symbol.png';
-import { Redirect } from 'react-router-dom';
 import './CharacterContainer.css'
 
 

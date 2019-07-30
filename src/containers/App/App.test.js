@@ -25,7 +25,7 @@ describe('App', () => {
   });
 
   it('should invoke getAllCharacters when component is mounted', () => {
-    expect(wrapper.instance().props.getAllCharacters).toHaveBeenCalled
+    expect(wrapper.instance().props.getAllCharacters).toHaveBeenCalled;
   });
 
   // it('should call characters() ', () => {

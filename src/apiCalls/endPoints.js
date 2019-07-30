@@ -1,4 +1,4 @@
-export const characters = 'https://last-airbender-api.herokuapp.com/api/v1/characters?perPage=100'
+export const characters = 'https://last-airbender-api.herokuapp.com/api/v1/characters?perPage=50'
 export const character = id => `https://last-airbender-api.herokuapp.com/api/v1/characters/${id}`
 // 'api/v1/characters?affiliation=${Nation+Name}'
 // '/api/v1/characters?enemies=${Character+Name}'
