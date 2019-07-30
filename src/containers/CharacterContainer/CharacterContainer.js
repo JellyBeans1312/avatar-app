@@ -7,6 +7,7 @@ import fire from '../../images/fire-symbol.png'
 import earth from '../../images/earth-symbol.png'
 import air from '../../images/air-symbol.png';
 import './CharacterContainer.css'
+import PropTypes from 'prop-types';
 
 
 
@@ -144,6 +145,10 @@ export const mapDispatchToProps = dispatch => ({
   filterClick: filter => dispatch(filterCharacters(filter))
 });
 
-
+CharacterContainer.propTypes = { 
+  characters: PropTypes.array.isRequired,
+  filterStatus: PropTypes.string.isRequired,
+  filterClick: PropTypes.func.isRequired
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(CharacterContainer);

@@ -5,6 +5,8 @@ import { getAllCharacters } from '../../apiCalls/apiCalls'
 import { connect } from 'react-redux'
 import { showCharacters } from '../../actions'
 import { Route } from 'react-router-dom'
+import PropTypes from 'prop-types';
+
 
 export class App extends Component {
 
@@ -35,5 +37,10 @@ export const mapStateToProps = store => ({
 export const mapDispatchToProps = dispatch => ({
   characters: characters => dispatch(showCharacters(characters))
 })
+
+App.propTypes = {
+  allCharacters: PropTypes.array.isRequired,
+  characters: PropTypes.func.isRequired
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

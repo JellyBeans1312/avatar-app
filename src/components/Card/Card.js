@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Card.css'
+import PropTypes from 'prop-types';
+
 export const Card = ({ character }) => {
 
   // const handleClick = async () => {
@@ -23,3 +25,7 @@ export const Card = ({ character }) => {
 
   );
 };
+
+Card.propTypes = {
+  character: PropTypes.object.isRequired
+}
